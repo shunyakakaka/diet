@@ -1,0 +1,31 @@
+<% sum = 0%>
+<% ini = @user.ini_weight%>
+<% day = @user.day_weight%>
+<div class="ui container">
+  <div class='ui grid'>
+    <div class="eight wide column">
+      <p>前回の体重</p>
+      <p><%= ini%></p>
+    </div>
+    <div class="eight wide column">
+      <p>今回の体重</p>
+      <p><%= day %></p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="ui grid">
+  <div class="eight wide column">
+    <p>結果</p>
+    <% sum = BigDecimal(day.to_s).floor(2) - BigDecimal(ini.to_s).floor(2) %>
+    <%= sum %>
+  </div>
+  <div class="eight wide column">
+    <p>一言</p>
+    <%= "痩せたね。" if sum < 0%>
+    <%= "太ったね。" if sum >= 0%>
+  </div>
+</div>
+<%= link_to "一覧画面", diets_path, class: "ui button"%>
