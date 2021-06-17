@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :diets
+  resources :diets, only: [:index, :new, :show, :create]
 end

@@ -5,30 +5,21 @@
   <thead>
     <tr>
       <th>Day</th>
-      <th>Judge</th>
+      <th>before</th>
+      <th>after</th>
+      <th>record_day</th>
       <th a="#">record</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>1日目</td>
-      <td>OK!</td>
-      <td><a href="#">詳細</td>
-    </tr>
-    <tr>
-      <td>2日目</td>
-      <td>NO</td>
-      <td><a href="#">詳細</td>
-    </tr>
-    <tr>
-      <td>3日目</td>
-      <td>NO</td>
-      <td><a href="#">詳細</td>
-    </tr>
-    <tr>
-      <td>4日目</td>
-      <td>OK!</td>
-      <td><a href="#">詳細</td>
-    </tr>
+    <% @users.each do |user|%>
+      <tr>
+        <td><%= user.id%></td>
+        <td><%= user.ini_weight  %></td>
+        <td><%= user.day_weight %></td>
+        <td><%= user.created_at.to_s(:datetime_jp)%></td>
+        <td><%= link_to "詳細", diet_path(user[:id]), class: "ui button"%></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>

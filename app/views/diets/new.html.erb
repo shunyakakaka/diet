@@ -1,17 +1,14 @@
-<div class="ui massive form">
-  <div class="field">
-    <div class="twe fields">
-      <div class="field">
-      <label>前回の体重</label>
-      <input type="text", name="ini_weight", placeholder="前回の体重", size="3">
-      </div>
-      <div class="field">
-        <label>今回の体重</label>
-        <input type="text", name="day_weight", placeholder="今回の体重", size="3">
-      </div>
+<%= form_with model: @user, url: diets_path do |f| %>
+  <div class="ui form">
+    <div class="field">
+      <%= f.label :ini_weight, "前回の体重" %>
+      <%= f.text_field :ini_weight %>
     </div>
-    <div class="ui submit button">
-      保存
+    <div class="field">
+      <%= f.label :day_weight, "今回の体重" %>
+      <%= f.text_field :day_weight %>
     </div>
-  </div>
-</div>
+    <%= f.submit "記録", class: "ui blue button" %>
+<% end %>
+
+<%= link_to "一覧画面", diets_path, class: "ui button" %>
