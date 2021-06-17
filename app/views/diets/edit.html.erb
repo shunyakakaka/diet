@@ -1,0 +1,14 @@
+<%= form_with model: @user, url: diet_path(@user[:id]), method: :patch do |f| %>
+  <div class="ui form">
+    <div class="field">
+      <%= f.label :ini_weight, "前回の体重" %>
+      <%= f.text_field :ini_weight %>
+    </div>
+    <div class="field">
+      <%= f.label :day_weight, "今回の体重" %>
+      <%= f.text_field :day_weight %>
+    </div>
+    <%= f.submit "再記録", class: "ui blue button" %>
+<% end %>
+
+<%= link_to "一覧画面", diets_path, class: "ui button" %>

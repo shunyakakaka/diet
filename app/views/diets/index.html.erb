@@ -8,7 +8,8 @@
       <th>before</th>
       <th>after</th>
       <th>record_day</th>
-      <th a="#">record</th>
+      <th>record</th>
+      <th>edit</th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +20,7 @@
         <td><%= user.day_weight %></td>
         <td><%= user.created_at.to_s(:datetime_jp)%></td>
         <td><%= link_to "詳細", diet_path(user[:id]), class: "ui button"%></td>
+        <td><%= link_to "編集", edit_diet_path(user[:id]), class: "ui button"%></td>
       </tr>
     <% end %>
   </tbody>
