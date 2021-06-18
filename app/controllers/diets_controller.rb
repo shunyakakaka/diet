@@ -1,16 +1,21 @@
 class DietsController < ApplicationController
   def index 
-    @users = User.all
+    @users = User.all.order(:id)
   end
 
   def new
-    @user = User.new
+    @user = User.new(flash[:user])
   end
 
   def create
-    User.create(user_params)
-
-    redirect_to diets_path
+    user = User.new(user_params)
+    if user.save
+      flash[:notice] = "記録しました"
+      redirect_to diets_path
+    else
+      redirect_to new_diet_path, flash: {user: user, error_messages: user.errors.full_messages
+      }
+    end
   end
 
   def show
@@ -23,9 +28,12 @@ class DietsController < ApplicationController
 
   def update
     user = User.find(params[:id])
-    user.update(user_params)
-
-    redirect_to diets_url
+    if user.update(user_params)
+      flash[:notice] = "編集しました"
+      redirect_to diet_path
+    else
+      redirect_to edit_diet_path, flash: {user: user, error_messages: user.errors.full_messages}
+    end
   end
 
   private

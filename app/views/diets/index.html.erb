@@ -1,3 +1,10 @@
+<div class="ui center aligned header">
+  <%if  flash[:notice] %>
+    <div class="ui success message">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+</div>
 <table class="ui selectable table">
   <caption><i class="user icon"></caption>
   <caption>information</caption>

@@ -1,6 +1,14 @@
 <% sum = 0%>
 <% ini = @user.ini_weight%>
 <% day = @user.day_weight%>
+
+<div class="ui center aligned header">
+  <% if flash[:notice]%>
+    <div class="ui success message">
+      <%= flash[:notice]%>
+    </div>
+  <% end %>
+</div>
 <div class="ui container">
   <div class='ui grid'>
     <div class="eight wide column">
@@ -19,7 +27,7 @@
 <div class="ui grid">
   <div class="eight wide column">
     <p>結果</p>
-    <% sum = BigDecimal(day.to_s).floor(2) - BigDecimal(ini.to_s).floor(2) %>
+    <% sum = BigDecimal(day.to_s).floor(2) - BigDecimal(ini.to_s).floor(1) %>
     <%= sum %>
   </div>
   <div class="eight wide column">
