@@ -1,0 +1,33 @@
+<% if flash[:notice] %>
+  <div class="ui success message ui center aligned header">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<table class="ui selectable table">
+  <caption><i class="user icon"></caption>
+  <caption>information</caption>
+  <caption><%= link_to "記録", new_weight_path, class: "ui button"%></caption>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>before</th>
+      <th>after</th>
+      <th>record_day</th>
+      <th>record</th>
+      <th>edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @weights.each do |weight|%>
+      <tr>
+        <td><%= weight.id%></td>
+        <td><%= weight.ini_weight  %></td>
+        <td><%= weight.day_weight %></td>
+        <td><%= weight.created_at.to_s(:datetime_jp)%></td>
+        <td><%= link_to "詳細", weight_path(weight[:id]), class: "ui button"%></td>
+        <td><%= link_to "編集", edit_weight_path(weight[:id]), class: "ui button"%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

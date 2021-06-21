@@ -1,6 +1,6 @@
 <% sum = 0%>
-<% ini = @user.ini_weight%>
-<% day = @user.day_weight%>
+<% ini = @weight.ini_weight%>
+<% day = @weight.day_weight%>
 
 <div class="ui center aligned header">
   <% if flash[:notice]%>
@@ -36,4 +36,4 @@
     <%= "太ったね。" if sum >= 0%>
   </div>
 </div>
-<%= link_to "一覧画面", diets_path, class: "ui button"%>
+<%= link_to "一覧画面", weights_path, class: "ui button"%>

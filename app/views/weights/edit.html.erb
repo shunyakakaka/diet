@@ -6,7 +6,7 @@
   <% end %>
 </div>
 
-<%= form_with model: @user, url: diet_path(@user[:id]), method: :patch do |f| %>
+<%= form_with model: @weight, url: weight_path(@weight[:id]), method: :patch do |f| %>
   <div class="ui form">
     <div class="field">
       <%= f.label :ini_weight, "前回の体重" %>
@@ -19,4 +19,4 @@
     <%= f.submit "再記録", class: "ui blue button" %>
 <% end %>
 
-<%= link_to "一覧画面", diets_path, class: "ui button" %>
+<%= link_to "一覧画面", weights_path, class: "ui button" %>

@@ -9,7 +9,7 @@
     </div>
   <% end %>
 </div>
-<%= form_with model: @user, url: diets_path do |f| %>
+<%= form_with model: @weight, url: weights_path do |f| %>
   <div class="ui form">
     <div class="field">
       <%= f.label :ini_weight, "前回の体重" %>
@@ -22,4 +22,4 @@
     <%= f.submit "記録", class: "ui blue button" %>
 <% end %>
 
-<%= link_to "一覧画面", diets_path, class: "ui button" %>
+<%= link_to "一覧画面", weights_path, class: "ui button" %>
