@@ -1,0 +1,7 @@
+<% if flash[:error_messages] %>
+  <div class="ui nagative message ui center aligned header">
+    <%= flash[:error_messages]%>
+  </div>
+<% end %>
+<h1>ユーザー登録</h1>
+<%= render partial: "form", locals: {user: @user} %>

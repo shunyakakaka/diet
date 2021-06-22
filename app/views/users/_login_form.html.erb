@@ -1,0 +1,12 @@
+<%= form_with scope: :session, model: @user, url: login_path do |f| %>
+  <div class="ui form">
+    <div class="field">
+      <%= f.label :name, "ユーザー名" %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :password, "パスワード" %>
+      <%= f.password_field :password %>
+    </div>
+    <%= f.submit "ログイン", class: "ui blue button" %>
+<% end %>

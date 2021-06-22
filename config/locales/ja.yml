@@ -1,4 +1,12 @@
 ja:
-  diets:
-    index:
-      
+  activerecord:
+    attributes:
+      weight:
+        id: "ID"
+        ini_weight: "前回の体重"
+        day_weight: "今日の体重"
+    attributes:
+      user:
+        name: "ユーザー名"
+        password: "パスワード"
+        password_confirmation: "パスワード（確認）"

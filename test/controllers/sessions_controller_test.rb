@@ -11,4 +11,9 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get __skip_template-engine" do
+    get sessions___skip_template-engine_url
+    assert_response :success
+  end
+
 end
